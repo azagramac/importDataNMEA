@@ -57,6 +57,7 @@ Contiene una tabla con los datos más relevantes:
 | 01/08/2025 | 19:37:22 | 40°24'60.0"N | -3°42'13.7"W | 4.2 km/h     | 🌍 [Ver Mapa](https://www.google.com/maps/place/40%C2%B024'60.0%22N+3%C2%B042'13.7%22W) |
 
 Incluye también un resumen anual de kilómetros recorridos:
+
 📊 Resumen anual de kilómetros recorridos
 
     📅 2024: 958.78 km
