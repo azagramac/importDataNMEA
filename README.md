@@ -104,3 +104,68 @@ $GPRMC,120004.000,A,4024.9999,N,00342.2283,W,0.05,270.00,010825,,*1E
 | Fecha     | `010825`       | 1 de agosto de 2025                    |
 | Checksum  | `*1A` (etc.)   | Verificación de integridad del mensaje |
 
+---
+
+## 🛰️ Leadtek LR9553D - Especificaciones técnicas
+
+Basado en el chipset SiRFstar III LP (Low Power), este dispositivo combina alto rendimiento con bajo consumo energético, ideal como registrador GPS (data-logger Bluetooth y USB)
+
+📦 Hardware y conectividad
+
+- Chipset: SiRFstarIII LP de alta sensibilidad, con mitigación de multi-path y escudo RF metálico
+- Canales: 20 canales “All‑In‑View” para rastreo simultáneo de múltiples satélites
+- Antena: Patch cerámico integrada (sin conectores externos)
+- Memoria interna: 4 MB en formato `FAT16` capaz de registrar hasta 60 000 puntos (fecha, hora, latitud, longitud, velocidad)
+
+🔋 Energía y operación
+
+- Batería: Li‑ion recargable (~750 mAh). Autonomía continúa de aproximadamente 12 horas
+- Duración registro contínuo: hasta 240 horas grabando puntos cada ~15s
+
+🕒 Rendimiento
+
+- Time‑to‑First‑Fix (TTFF):
+    - Hot start: ~1 s
+    - Warm start: ~35 s
+    - Cold start: ~42 s
+- Re‑adquisición: ~0.1 s
+
+📐 Precisión y alcance
+
+- Precisión posición:
+    - ~10 m RMS 2D sin corrección
+    - <5 m con WAAS o EGNOS
+- Precisión velocidad: ~0.1 m/s
+- Precisión temporal: sincronización con GPS en microsegundos (WGS‑84)
+
+🔌 Interfaz y protocolos
+
+- USB Mini‑B para carga y descarga de datos
+- Bluetooth 1.2 (Clase 2), con perfil SPP
+- Comunicaciones por puerto serie RS‑232 o TTL
+- Protocolos NMEA‑0183 (por defecto) o SiRF Binary
+- Velocidades típicas: 38400 bps (solo en modo Sirft), en modo NMEA 9600 bps
+
+🌡️ Condiciones operativas
+
+- Consumo medio alrededor de 70 mA
+- Funciona en temperaturas desde ‑30 °C a +60 °C
+- Diseñado para ambientes con interferencias, gracias al escudo RF y mitigación multipath
+
+⚠️ Limitaciones conocidas
+
+- El borrado del registro se realiza sólo formateando en Windows, en modo `FAT/FAT16`, no compatible con `FAT32`.
+- ❌ En Linux no se borra correctamente el fichero `DL010825.TXT`, lo que puede provocar un brick del dispositivo.
+- Aunque aparece como dispositivo de almacenamiento USB, no es totalmente compatible con sistemas de archivos estándar en Linux `mkdosfs`, ni tampoco con Windows 10/11
+
+✅ Comparativa rápida
+
+| Característica           | **9553D**                          | **9553X**                       |
+| ------------------------ | ---------------------------------- | ------------------------------- |
+| Almacenamiento para logs | Sí (4 MB, \~60 000 puntos)         | No (solo función Bluetooth GPS) |
+| Chipset                  | SiRFstar III **LP** (bajo consumo) | SiRFstar III (versión estándar) |
+| Bluetooth                | Si                                 | Si                              |
+| Autonomía                | \~12 h continuas                   | \~6–8 h                         |
+| Conector externo antena  | No                                 | No                              |
+| Compatible con PocketPC  | Si                                 | Si                              |
+| Bateria extraible        | No                                 | Si                              |
